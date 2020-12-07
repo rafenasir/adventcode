@@ -19,10 +19,10 @@ console.log("arraySample = " + arraySample.length);
 
 
 
-let initialResult = 0;
-let finalResult = 0;
+let initialResultTest1 = 0;
+let finalResultTest1 = 0;
 
-function calculationOfResult() {
+function calculationOfResultpart1() {
 
     for (i = 0; i < arrayData.length; i++) {
         console.log("inside the loop    ");
@@ -32,26 +32,46 @@ function calculationOfResult() {
 
             if (individualArray[j] == arraySample[i]) {
 
-                initialResult++;
+                initialResultTest1++;
             }
         }
         console.log("end of the J Loop")
 
-        console.log("initialResult" + initialResult);
+        console.log("initialResult" + initialResultTest1);
 
-        if (initialResult >= arrayMin[i] && initialResult <= arrayMax[i]) {
-            finalResult++;
+        if (initialResultTest1 >= arrayMin[i] && initialResultTest1 <= arrayMax[i]) {
+            finalResultTest1++;
 
-            console.log(finalResult);
+            console.log(finalResultTest1);
         }
 
-        initialResult = 0;
+        initialResultTest1 = 0;
 
     }
 
 }
 
-calculationOfResult()
+let initialResultTest2 = 0;
+let finalResultTest2 = 0;
+
+function calculationOfResultpart2() {
+    for (i = 0; i < arrayData.length; i++) {
+        console.log("inside the loop");
+
+        let individualArraytest2 = arrayData[i].split("");
+
+        if ((individualArraytest2[arrayMin[i] - 1] == arraySample[i] && individualArraytest2[arrayMax[i] - 1] != arraySample[i]) || (individualArraytest2[arrayMin[i] - 1] != arraySample[i] && individualArraytest2[arrayMax[i] - 1] == arraySample[i])) {
+            finalResultTest2++;
+            console.log(finalResultTest2);
+        }
+    }
+
+}
+
+calculationOfResultpart2();
+
+calculationOfResultpart1();
+
 
 
 // let i = 0;
